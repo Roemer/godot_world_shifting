@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlp5py7wg4br8"]
+
+[ext_resource type="PackedScene" uid="uid://bjqfs3agltci" path="res://models/floor.glb" id="1_m0akc"]
+
+[node name="floor" instance=ExtResource("1_m0akc")]
+
+[node name="floor2" parent="." index="0"]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)

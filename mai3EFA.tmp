@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://j7c4vthsnujw"]
+
+[ext_resource type="PackedScene" uid="uid://dlp5py7wg4br8" path="res://floor.tscn" id="2_60jry"]
+[ext_resource type="PackedScene" uid="uid://cyhm8qcshrsdf" path="res://player.tscn" id="3_7wpbn"]
+[ext_resource type="Script" path="res://Label.gd" id="3_qkxi2"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.958053, 0.0924959, -0.271255, 0.183895, 0.527535, 0.829391, 0.219812, -0.844483, 0.488397, -7.19077, 2.17668, -3.13569)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.947946, 0.31843, 0, -0.31843, 0.947946, 0, 2.4398, 4.13958)
+current = true
+
+[node name="character-human" parent="." instance=ExtResource("3_7wpbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71106, 0, -0.480548)
+
+[node name="floor" parent="." instance=ExtResource("2_60jry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031292, 0, -0.0359316)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 212.0
+offset_bottom = 24.0
+script = ExtResource("3_qkxi2")

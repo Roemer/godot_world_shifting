@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://j7c4vthsnujw"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_1e1n0"]
+[ext_resource type="PackedScene" uid="uid://b4ii27x4gvmqv" path="res://world_spawner.tscn" id="2_j0urk"]
+[ext_resource type="PackedScene" uid="uid://cyhm8qcshrsdf" path="res://player.tscn" id="3_7wpbn"]
+[ext_resource type="Script" path="res://Label.gd" id="3_qkxi2"]
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_1e1n0")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.947946, 0.31843, 0, -0.31843, 0.947946, 0, 2.4398, 4.13958)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.958053, 0.0924959, -0.271255, 0.183895, 0.527535, 0.829391, 0.219812, -0.844483, 0.488397, -7.19077, 2.17668, -3.13569)
+shadow_enabled = true
+
+[node name="character-human" parent="." instance=ExtResource("3_7wpbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71106, 0, -0.480548)
+
+[node name="WorldSpawner" parent="." node_paths=PackedStringArray("camera", "player") instance=ExtResource("2_j0urk")]
+camera = NodePath("../Camera3D")
+player = NodePath("../character-human")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 212.0
+offset_bottom = 24.0
+script = ExtResource("3_qkxi2")
