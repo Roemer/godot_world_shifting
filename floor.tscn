@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlp5py7wg4br8"]
+[gd_scene load_steps=3 format=3 uid="uid://dlp5py7wg4br8"]
 
 [ext_resource type="PackedScene" uid="uid://bjqfs3agltci" path="res://models/floor.glb" id="1_m0akc"]
+[ext_resource type="PackedScene" uid="uid://dsbjcyb4vi4c7" path="res://wall_half.tscn" id="2_t2onq"]
 
 [node name="floor" instance=ExtResource("1_m0akc")]
 
 [node name="floor2" parent="." index="0"]
 transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="wall-half2" parent="." index="1" instance=ExtResource("2_t2onq")]
+transform = Transform3D(-1.31134e-07, 0, 1, 0, 1, 0, -3, 0, -4.37114e-08, -3.5, 0, 0)
+
+[node name="wall-half3" parent="." index="2" instance=ExtResource("2_t2onq")]
+transform = Transform3D(-1.31134e-07, 0, -1, 0, 1, 0, 3, 0, -4.37114e-08, 3.5, 0, 0)
